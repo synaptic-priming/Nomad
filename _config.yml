@@ -1,12 +1,12 @@
 # Site settings
-title: Synaptic priming
-description: primer pharmacology
+title: Synaptic Priming
+description: Synaptic Priming
 # baseurl: "/particle" # the subpath of your site, e.g. /blog
 # url: "localhost:3000" # the base hostname & protocol for your site e.g. http://willianjusten.com.br
 
 # User settings
 username: Synaptic priming
-user_description: How does one experience change our response to another days or months later? Synaptic priming fuses elements of synaptic plasticity with psychopharmacology to provide new answers to this question, and is being used in clinical psychiatry to transform medicine. My goal as an economically accessible consultant is to communicate the synaptic priming framework so that treatment regimens are improved, study designs are refined, and novel therapeutics are developed. 
+user_description: How does one experience change our response to another days or even months later? Synaptic priming fuses elements of synaptic plasticity with psychopharmacology to provide new answers to this question, and is being used to transform psychiatry. My goal as an economically accessible, nomadic consultant is to use the synaptic priming framework to improve available treatment regimens, refine study designs, and develop novel therapeutics. 
 user_title: A framework for the future of psychiatric medicine
 email: synaptic.priming@gmail.com
 twitter_username: SynapticPriming
