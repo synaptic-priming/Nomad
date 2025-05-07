@@ -17,4 +17,7 @@ gplus_username:  lorem_ipsum
 google-analytics:
   id: ""
 
+plugins:
+  - jemoji
+
 exclude: ['package.json', 'src' , 'node_modules']
