@@ -45,33 +45,36 @@
     </div>
 </div>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Form</title>
-</head>
-<body>
-  <h2>Contact Form</h2>
-  <form id="contactForm">
-    <div>
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required>
-    </div>
-    <div>
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
-    </div>
-    <div>
-      <label for="message">Message:</label>
-      <textarea id="message" name="message" rows="4" required></textarea>
-    </div>
-    <button type="submit">Submit</button>
-  </form>
+    const messageContainer = document.getElementById("messageContainer");
 
-  <div id="messageContainer"></div>
-
-  
-</body>
-</html>
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      
+      const formData = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        message: document.getElementById("message").value
+      };
+      
+      /* make sure to replace the xxxxxxx with the form id you created on fabform.io */
+      
+      fetch('https://fabform.io/f/vO-eemq', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success === "true") {
+          messageContainer.innerHTML = "<p style='color: green;'>Form submitted successfully!</p>";
+        } else {
+          throw new Error('Server response indicates failure');
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        messageContainer.innerHTML = "<p style='color: red;'>An error occurred while submitting the form.</p>";
+      });
+    });
