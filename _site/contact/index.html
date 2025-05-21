@@ -1,14 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-  {% include head.html %}
-  <body>
-      {% include header.html %}
-      <section id="about">
-        {% include about.html %}
-      </section>
-      <section id="projects">
-        {% include projects.html %}
-      </section>
-        {{ content }}
-      {% include footer.html %}
-  </body>
+---
+layout: page
+title: Contact
+permalink: /contact/
+---
+
+<form accept-charset="UTF-8" action="https://fabform.io/f/vO-eemq" method="POST" enctype="multipart/form-data" target="_blank">
+    <input type="email" name="email" placeholder="Your Email">
+    <input type="text" name="name" placeholder="Your Name">
+    <input type="text" name="message" placeholder="Your Message">
+    <button type="submit">Send</button>
+</form>
