@@ -3,7 +3,7 @@
 <div class="warning" style='background-color:##FFFFFF; color: #000000; border: solid #155289 4px; border-radius: 4px; padding:0.7em;'> 
 
 <div class="user-projects">
-    <p align="center" style='font-family:Ebrima ; color:#155289 ; line-height:0px; font-size:5vw; '> <i> <b> <u> Who we are </u> </b> </i> </p>
+    <p align="center" style='font-family:Ebrima ; color:#155289 ; line-height:5px; font-size:3vw; '> <i> <b> <u> Who we are </u> </b> </i> </p>
      <div class="images-right">
     <img align="right" src="{{ "/assets/img/logo-transparent background.png" | prepend: site.baseurl }}" />
  </div>
@@ -186,9 +186,38 @@ function showSlides() {
   }
   slides[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " active";
-  setTimeout(showSlides, 5000); // Change image every 5 seconds
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
 }
 </script>
 
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+    
 </body>
 </html> 
